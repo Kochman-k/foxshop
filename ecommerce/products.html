@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foxshop — Electronics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand">
+        <img src="https://www.figma.com/api/mcp/asset/bb1a9455-7161-435f-94f8-970f27fce8d3" alt="Foxshop" class="navbar__logo-icon">
+        <span class="navbar__logo-text">Foxshop</span>
+      </a>
+      <div class="navbar__links">
+
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">Men <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col"><h4>T-Shirts</h4><a href="#">Graphic Tees</a><a href="#">Plain Tees</a><a href="#">Polo Shirts</a><a href="#">Henley Shirts</a><a href="#">Muscle Tees</a></div>
+              <div class="mega-menu__col"><h4>Shirts</h4><a href="#">Short Sleeve</a><a href="#">Long Sleeve</a><a href="#">Casual Button Down</a></div>
+              <div class="mega-menu__col"><h4>Pants</h4><a href="#">Jeans</a><a href="#">Chinos</a><a href="#">Cargo Pants</a></div>
+              <div class="mega-menu__col"><h4>Jackets</h4><a href="#">Denim Jackets</a><a href="#">Bomber Jackets</a><a href="#">Hoodies</a></div>
+              <div class="mega-menu__col"><h4>Shorts</h4><a href="#">Denim Shorts</a><a href="#">Chino Shorts</a><a href="#">Athletic Shorts</a></div>
+              <div class="mega-menu__col"><h4>Shoes</h4><a href="#">Sneakers</a><a href="#">Casual Shoes</a></div>
+              <div class="mega-menu__promo" style="background: linear-gradient(135deg, #1d293d, #314158)"><span class="mega-menu__promo-tag">New Season</span><strong>Men's Spring Collection</strong><p>Up to 40% off selected styles</p><a href="#" class="mega-menu__promo-btn">Shop now</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">Women <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col"><h4>Dresses</h4><a href="#">Midi Dress</a><a href="#">Maxi Dress</a><a href="#">Mini Dress</a><a href="#">Bodycon Dress</a><a href="#">Sundress</a></div>
+              <div class="mega-menu__col"><h4>Tops</h4><a href="#">Crop Top</a><a href="#">Blouse</a><a href="#">Tank Top</a><a href="#">Sweaters</a></div>
+              <div class="mega-menu__col"><h4>Bottoms</h4><a href="#">Skinny Jeans</a><a href="#">Wide Leg Pants</a><a href="#">Leggings</a></div>
+              <div class="mega-menu__col"><h4>Jackets</h4><a href="#">Denim Jacket</a><a href="#">Blazer</a><a href="#">Cardigan</a></div>
+              <div class="mega-menu__col"><h4>Skirts</h4><a href="#">Mini Skirt</a><a href="#">Midi Skirt</a><a href="#">Maxi Skirt</a></div>
+              <div class="mega-menu__promo" style="background: linear-gradient(135deg, #7d5260, #b58392)"><span class="mega-menu__promo-tag">Trending</span><strong>Summer Dresses</strong><p>Free shipping on orders $99+</p><a href="#" class="mega-menu__promo-btn">Explore</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">Kids <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col"><h4>Clothing</h4><a href="#">T-Shirts</a><a href="#">Pants</a><a href="#">Hoodies</a><a href="#">Shorts</a><a href="#">Sleepwear</a></div>
+              <div class="mega-menu__col"><h4>Toys</h4><a href="#">Learning Toys</a><a href="#">Cars & Trucks</a><a href="#">Dolls</a></div>
+              <div class="mega-menu__col"><h4>Backpacks</h4><a href="#">School Backpack</a><a href="#">Character Backpack</a></div>
+              <div class="mega-menu__col"><h4>Shoes</h4><a href="#">Sneakers</a><a href="#">Casual Shoes</a></div>
+              <div class="mega-menu__col"><h4>Accessories</h4><a href="#">Hats</a><a href="#">Socks</a><a href="#">Belts</a></div>
+              <div class="mega-menu__promo" style="background: linear-gradient(135deg, #f59e0b, #f97316)"><span class="mega-menu__promo-tag">Back to School</span><strong>Kids Essentials</strong><p>Backpacks from $19.99</p><a href="#" class="mega-menu__promo-btn">Shop deals</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">Home <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col"><h4>Kitchen Cookware</h4><a href="#">Pots & Pans</a><a href="#">Bakeware</a><a href="#">Knives</a></div>
+              <div class="mega-menu__col"><h4>Kitchen Utensils</h4><a href="#">Cooking Utensils</a><a href="#">Cutting Boards</a><a href="#">Measuring Tools</a></div>
+              <div class="mega-menu__col"><h4>Tableware</h4><a href="#">Dinner Plates</a><a href="#">Glasses</a><a href="#">Cutlery</a></div>
+              <div class="mega-menu__col"><h4>Home Textiles</h4><a href="#">Bed Sheets</a><a href="#">Towels</a><a href="#">Blankets</a></div>
+              <div class="mega-menu__col"><h4>Home Decor</h4><a href="#">Lamps</a><a href="#">Vases</a><a href="#">Picture Frames</a></div>
+              <div class="mega-menu__col"><h4>Cleaning Supplies</h4><a href="#">Surface Cleaners</a><a href="#">Sponges & Brushes</a><a href="#">Trash Bags</a></div>
+              <div class="mega-menu__promo" style="background: linear-gradient(135deg, #059669, #10b981)"><span class="mega-menu__promo-tag">Fresh Arrivals</span><strong>Home & Living</strong><p>New decor collection is here</p><a href="#" class="mega-menu__promo-btn">Discover</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar__dropdown">
+          <a href="products.html" class="navbar__link navbar__link--active">Electronics <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col"><h4>Phones</h4><a href="#">Smartphones</a><a href="#">Phone Cases</a><a href="#">Chargers</a></div>
+              <div class="mega-menu__col"><h4>Computer Accessories</h4><a href="#">Laptop Bags</a><a href="#">Mouse & Keyboard</a><a href="#">Laptop Stands</a></div>
+              <div class="mega-menu__col"><h4>Headphones</h4><a href="#">Wireless Headphones</a><a href="#">Wired Headphones</a><a href="#">Earbuds</a></div>
+              <div class="mega-menu__col"><h4>Speakers</h4><a href="#">Bluetooth Speakers</a><a href="#">Smart Speakers</a></div>
+              <div class="mega-menu__col"><h4>TV Accessories</h4><a href="#">TV Mounts</a><a href="#">Streaming Devices</a><a href="#">Remote Controls</a></div>
+              <div class="mega-menu__promo" style="background: linear-gradient(135deg, #2563eb, #7c3aed)"><span class="mega-menu__promo-tag">Tech Week</span><strong>Electronics Sale</strong><p>Save up to 30% on gadgets</p><a href="#" class="mega-menu__promo-btn">View offers</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">Food <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col"><h4>Fresh Fruits</h4><a href="#">Apples</a><a href="#">Citrus</a><a href="#">Berries</a></div>
+              <div class="mega-menu__col"><h4>Fresh Vegetables</h4><a href="#">Leafy Greens</a><a href="#">Root Vegetables</a><a href="#">Tomatoes</a></div>
+              <div class="mega-menu__col"><h4>Dairy</h4><a href="#">Milk</a><a href="#">Cheese</a><a href="#">Yogurt</a></div>
+              <div class="mega-menu__col"><h4>Pantry Staples</h4><a href="#">Pasta</a><a href="#">Rice</a><a href="#">Cooking Oil</a></div>
+              <div class="mega-menu__col"><h4>Snacks</h4><a href="#">Chips</a><a href="#">Nuts</a><a href="#">Cookies</a></div>
+              <div class="mega-menu__col"><h4>Drinks</h4><a href="#">Water</a><a href="#">Juice</a><a href="#">Soda</a></div>
+              <div class="mega-menu__promo" style="background: linear-gradient(135deg, #dc2626, #f97316)"><span class="mega-menu__promo-tag">Weekly Deals</span><strong>Fresh & Organic</strong><p>Organic produce from $2.99</p><a href="#" class="mega-menu__promo-btn">Order now</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link">Personal care <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="mega-menu">
+            <div class="mega-menu__inner">
+              <div class="mega-menu__col"><h4>Men Grooming</h4><a href="#">Face Wash</a><a href="#">Shave Cream</a><a href="#">Hair Products</a><a href="#">Cologne</a></div>
+              <div class="mega-menu__col"><h4>Women Makeup</h4><a href="#">Foundation</a><a href="#">Lipstick</a><a href="#">Mascara</a></div>
+              <div class="mega-menu__col"><h4>Skincare</h4><a href="#">Face Cleanser</a><a href="#">Moisturizer</a><a href="#">Face Mask</a></div>
+              <div class="mega-menu__col"><h4>Hair Care</h4><a href="#">Shampoo</a><a href="#">Conditioner</a><a href="#">Hair Styling</a></div>
+              <div class="mega-menu__col"><h4>Body Care</h4><a href="#">Body Wash</a><a href="#">Body Lotion</a><a href="#">Deodorant</a></div>
+              <div class="mega-menu__col"><h4>Baby Care</h4><a href="#">Diapers</a><a href="#">Wipes</a><a href="#">Baby Lotion</a></div>
+              <div class="mega-menu__promo" style="background: linear-gradient(135deg, #ec4899, #a855f7)"><span class="mega-menu__promo-tag">Self-Care</span><strong>Beauty Bestsellers</strong><p>Buy 2 get 1 free on skincare</p><a href="#" class="mega-menu__promo-btn">Shop beauty</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__cart" aria-label="Shopping bag">
+          <img src="https://www.figma.com/api/mcp/asset/6309f1f8-a844-4967-8a20-ffbc6908bd6d" alt="" width="24" height="24">
+          <span class="navbar__badge">0</span>
+        </button>
+        <a href="#" class="btn btn--dark btn--sm">Log in</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="plp">
+    <!-- ===== Breadcrumbs ===== -->
+    <div class="plp__breadcrumbs reveal">
+      <a href="index.html">Home</a>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <span>Electronics</span>
+    </div>
+
+    <!-- ===== Page Header ===== -->
+    <div class="plp__header reveal">
+      <div>
+        <h1 class="plp__title">Electronics</h1>
+        <p class="plp__count">128 products</p>
+      </div>
+      <div class="plp__toolbar">
+        <div class="plp__sort">
+          <label class="plp__sort-label">Sort by</label>
+          <select class="plp__sort-select" id="sortSelect">
+            <option>Most popular</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest</option>
+            <option>Best rated</option>
+          </select>
+        </div>
+        <div class="plp__view-toggle">
+          <button class="plp__view-btn plp__view-btn--active" data-view="grid" aria-label="Grid view">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z"/></svg>
+          </button>
+          <button class="plp__view-btn" data-view="list" aria-label="List view">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h18v2H3zm0 7h18v2H3zm0 7h18v2H3z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="plp__layout">
+      <!-- ===== Sidebar Filters ===== -->
+      <aside class="plp__sidebar reveal-stagger">
+        <div class="filter-group">
+          <h3 class="filter-group__title">Category</h3>
+          <div class="filter-group__options">
+            <label class="filter-check"><input type="checkbox" checked> <span>All Electronics</span> <em>128</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Headphones</span> <em>34</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Smartphones</span> <em>28</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Smartwatches</span> <em>22</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Speakers</span> <em>18</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Consoles</span> <em>14</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Keyboards</span> <em>12</em></label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-group__title">Price range</h3>
+          <div class="filter-group__options">
+            <label class="filter-check"><input type="checkbox"> <span>Under $50</span> <em>22</em></label>
+            <label class="filter-check"><input type="checkbox" checked> <span>$50 – $100</span> <em>38</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>$100 – $200</span> <em>41</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>$200 – $500</span> <em>19</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Over $500</span> <em>8</em></label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-group__title">Brand</h3>
+          <div class="filter-group__options">
+            <label class="filter-check"><input type="checkbox"> <span>Apple</span> <em>24</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Samsung</span> <em>20</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Sony</span> <em>18</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Bose</span> <em>14</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>JBL</span> <em>12</em></label>
+            <label class="filter-check"><input type="checkbox"> <span>Logitech</span> <em>10</em></label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-group__title">Rating</h3>
+          <div class="filter-group__options">
+            <label class="filter-check"><input type="checkbox"> <span>4 stars & up</span></label>
+            <label class="filter-check"><input type="checkbox"> <span>3 stars & up</span></label>
+          </div>
+        </div>
+
+        <button class="btn btn--dark btn--full filter-apply">Apply filters</button>
+      </aside>
+
+      <!-- ===== Product Grid ===== -->
+      <div class="plp__grid" id="productGrid">
+
+        <article class="plp-card reveal" onclick="location.href='product.html'" style="cursor:pointer">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/3c9cf61c-b5a3-4ef9-b791-c846908f8748" alt="Premium Smartwatch" class="plp-card__img">
+            <span class="plp-card__badge">New</span>
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Smartwatches</span>
+            <h3 class="plp-card__name">Premium Smartwatch Pro</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.8 (124)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$139.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/37b1119e-4f5d-479c-a0d6-7b01fdffd57c" alt="Headphones" class="plp-card__img">
+            <span class="plp-card__badge plp-card__badge--sale">-25%</span>
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Headphones</span>
+            <h3 class="plp-card__name">Wireless Noise Cancelling</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.6 (89)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$89.00</span>
+              <span class="plp-card__old">$119.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/4ecc0586-3170-44d4-bc55-f1988c7218aa" alt="Smartphone" class="plp-card__img">
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Smartphones</span>
+            <h3 class="plp-card__name">Ultra Phone X200</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.9 (256)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$449.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/a72e8090-0f96-46b7-8db8-cd685d599fd2" alt="Watch" class="plp-card__img">
+            <span class="plp-card__badge">Bestseller</span>
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Smartwatches</span>
+            <h3 class="plp-card__name">Fitness Tracker Elite</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.7 (198)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$79.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/7e3fa101-4371-4c80-bfc5-39e6a284c81a" alt="Smartwatch" class="plp-card__img">
+            <span class="plp-card__badge plp-card__badge--sale">-15%</span>
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Smartwatches</span>
+            <h3 class="plp-card__name">Smart Band Ultra</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.5 (67)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$169.00</span>
+              <span class="plp-card__old">$199.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/20c3e511-3d7c-489c-86d9-8693f848598e" alt="Watch" class="plp-card__img">
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Smartwatches</span>
+            <h3 class="plp-card__name">Classic Digital Watch</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.3 (42)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$219.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <!-- ===== Duplicated products (row 2) ===== -->
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/4ecc0586-3170-44d4-bc55-f1988c7218aa" alt="Smartphone" class="plp-card__img">
+            <span class="plp-card__badge">Hot</span>
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Smartphones</span>
+            <h3 class="plp-card__name">Galaxy Pro Max 15</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.7 (312)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$529.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/a72e8090-0f96-46b7-8db8-cd685d599fd2" alt="Watch" class="plp-card__img">
+            <span class="plp-card__badge plp-card__badge--sale">-30%</span>
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Smartwatches</span>
+            <h3 class="plp-card__name">Sport Watch Titanium</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.4 (76)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$97.00</span>
+              <span class="plp-card__old">$139.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/37b1119e-4f5d-479c-a0d6-7b01fdffd57c" alt="Headphones" class="plp-card__img">
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Headphones</span>
+            <h3 class="plp-card__name">Studio Monitor HD</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.8 (154)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$129.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/3c9cf61c-b5a3-4ef9-b791-c846908f8748" alt="Watch" class="plp-card__img">
+            <span class="plp-card__badge">New</span>
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Smartwatches</span>
+            <h3 class="plp-card__name">Luxury Watch Series 8</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.9 (89)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$299.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/7e3fa101-4371-4c80-bfc5-39e6a284c81a" alt="Smartwatch" class="plp-card__img">
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Smartwatches</span>
+            <h3 class="plp-card__name">Adventure GPS Watch</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.6 (203)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$189.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="plp-card reveal">
+          <div class="plp-card__media">
+            <img src="https://www.figma.com/api/mcp/asset/20c3e511-3d7c-489c-86d9-8693f848598e" alt="Watch" class="plp-card__img">
+            <span class="plp-card__badge plp-card__badge--sale">-20%</span>
+            <button class="heart-btn plp-card__fav" aria-label="Add to favorites">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="plp-card__body">
+            <span class="plp-card__category">Smartwatches</span>
+            <h3 class="plp-card__name">Retro Digital Chrono</h3>
+            <div class="plp-card__stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F9A825"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <span>4.2 (58)</span>
+            </div>
+            <div class="plp-card__price">
+              <span class="plp-card__current">$159.00</span>
+              <span class="plp-card__old">$199.00</span>
+            </div>
+            <button class="btn btn--dark btn--full plp-card__cart">Add to cart</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ===== Pagination ===== -->
+    <div class="plp__pagination reveal">
+      <button class="pagination__btn" disabled aria-label="Previous page">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="pagination__page pagination__page--active">1</button>
+      <button class="pagination__page">2</button>
+      <button class="pagination__page">3</button>
+      <span class="pagination__ellipsis">...</span>
+      <button class="pagination__page">12</button>
+      <button class="pagination__btn" aria-label="Next page">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer reveal">
+    <div class="footer__categories reveal-stagger">
+      <div class="footer__col"><h4>Men</h4><a href="#">T-Shirts</a><a href="#">Shirts</a><a href="#">Pants</a><a href="#">Jackets</a><a href="#">Shorts</a><a href="#">Shoes</a></div>
+      <div class="footer__col"><h4>Women</h4><a href="#">Dresses</a><a href="#">Tops</a><a href="#">Bottoms</a><a href="#">Jackets</a><a href="#">Skirts</a></div>
+      <div class="footer__col"><h4>Kids</h4><a href="#">Clothing</a><a href="#">Toys</a><a href="#">Backpacks</a><a href="#">Shoes</a><a href="#">Accessories</a></div>
+      <div class="footer__col"><h4>Home</h4><a href="#">Kitchen Cookware</a><a href="#">Kitchen Utensils</a><a href="#">Tableware</a><a href="#">Home Textiles</a><a href="#">Home Decor</a></div>
+      <div class="footer__col"><h4>Electronics</h4><a href="#">Phones</a><a href="#">Computer Accessories</a><a href="#">Headphones</a><a href="#">Speakers</a><a href="#">TV Accessories</a></div>
+      <div class="footer__col"><h4>Food</h4><a href="#">Fresh Fruits</a><a href="#">Fresh Vegetables</a><a href="#">Dairy</a><a href="#">Pantry Staples</a><a href="#">Snacks</a></div>
+      <div class="footer__col"><h4>Personal care</h4><a href="#">Men Grooming</a><a href="#">Women Makeup</a><a href="#">Skincare</a><a href="#">Hair Care</a><a href="#">Fragrance</a></div>
+    </div>
+    <hr class="footer__divider">
+    <div class="footer__bottom">
+      <a href="index.html" class="footer__brand">
+        <img src="https://www.figma.com/api/mcp/asset/704bedc8-9fa9-406e-b075-705313473ca3" alt="Foxshop" width="37" height="37">
+        <span>Foxshop</span>
+      </a>
+      <a href="#">Returns and Exchanges</a>
+      <a href="#">Product Recall</a>
+      <a href="#">Gift Cards</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Affiliate Program</a>
+      <a href="#">My account</a>
+      <div class="footer__socials">
+        <img src="https://www.figma.com/api/mcp/asset/27102978-5d1a-4b67-85ce-db71fbcf51eb" alt="Meta" width="24" height="24">
+        <img src="https://www.figma.com/api/mcp/asset/1c024000-a3b6-4a81-bab6-4a17d87b6d0d" alt="Instagram" width="24" height="24">
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+    <p class="footer__legal">This website uses VTEX technology. In-store price may vary. Prices and offers are subject to change. 2023 Brandless Store.</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    (function() {
+      var els = document.querySelectorAll('.reveal, .reveal-stagger, .reveal--scale');
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function(el) { observer.observe(el); });
+    })();
+
+    // Dark mode (shared with homepage via localStorage)
+    (function() {
+      var toggle = document.getElementById('themeToggle');
+      var root = document.documentElement;
+      if (localStorage.getItem('foxshop-theme') === 'dark') root.setAttribute('data-theme', 'dark');
+      toggle.addEventListener('click', function() {
+        var isDark = root.getAttribute('data-theme') === 'dark';
+        root.toggleAttribute && root.setAttribute('data-theme', isDark ? '' : 'dark');
+        if (isDark) root.removeAttribute('data-theme');
+        else root.setAttribute('data-theme', 'dark');
+        localStorage.setItem('foxshop-theme', isDark ? 'light' : 'dark');
+      });
+    })();
+
+    // Grid / List toggle
+    (function() {
+      var btns = document.querySelectorAll('.plp__view-btn');
+      var grid = document.getElementById('productGrid');
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          btns.forEach(function(b) { b.classList.remove('plp__view-btn--active'); });
+          btn.classList.add('plp__view-btn--active');
+          grid.classList.toggle('plp__grid--list', btn.dataset.view === 'list');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

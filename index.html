@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoxShop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="top-app-bar">
+    <div class="top-app-bar__container">
+      <a href="/" class="top-app-bar__logo">FoxShop</a>
+      <nav class="top-app-bar__nav" id="mainNav">
+        <a href="#" class="nav-link">Nowosci</a>
+        <a href="#" class="nav-link">Kategorie</a>
+        <a href="#" class="nav-link">Promocje</a>
+        <a href="#" class="nav-link">Bestsellery</a>
+        <a href="#" class="nav-link">Kontakt</a>
+      </nav>
+      <div class="top-app-bar__actions">
+        <button class="icon-button" aria-label="Szukaj">
+          <span class="material-icons-outlined">search</span>
+        </button>
+        <button class="icon-button" aria-label="Konto">
+          <span class="material-icons-outlined">person_outline</span>
+        </button>
+        <button class="icon-button icon-button--badge" aria-label="Koszyk" data-badge="2">
+          <span class="material-icons-outlined">shopping_cart</span>
+        </button>
+        <button class="icon-button menu-toggle" aria-label="Menu" id="menuToggle">
+          <span class="material-icons-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="nav-drawer-scrim" id="navScrim"></div>
+  <aside class="nav-drawer" id="navDrawer">
+    <div class="nav-drawer__header">
+      <span class="nav-drawer__title">FoxShop</span>
+      <button class="icon-button" id="drawerClose" aria-label="Zamknij">
+        <span class="material-icons-outlined">close</span>
+      </button>
+    </div>
+    <nav class="nav-drawer__links">
+      <a href="#" class="nav-drawer__link">Nowosci</a>
+      <a href="#" class="nav-drawer__link">Kategorie</a>
+      <a href="#" class="nav-drawer__link">Promocje</a>
+      <a href="#" class="nav-drawer__link">Bestsellery</a>
+      <a href="#" class="nav-drawer__link">Kontakt</a>
+    </nav>
+  </aside>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div class="hero__content">
+        <span class="hero__label">Nowa kolekcja 2026</span>
+        <h1 class="hero__title">Odkryj swoj styl</h1>
+        <p class="hero__subtitle">Najnowsze trendy w modzie dostepne w FoxShop. Darmowa dostawa od 199 zl.</p>
+        <div class="hero__actions">
+          <a href="#" class="btn btn--filled">Zobacz kolekcje</a>
+          <a href="#" class="btn btn--outlined">Dowiedz sie wiecej</a>
+        </div>
+      </div>
+      <div class="hero__image">
+        <div class="hero__image-placeholder">
+          <span class="material-icons-outlined">image</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Carousel -->
+    <section class="section categories">
+      <div class="section__header">
+        <h2 class="section__title">Kategorie produktow</h2>
+        <div class="carousel-nav">
+          <button class="icon-button icon-button--tonal" aria-label="Poprzednie" data-carousel="categories" data-dir="-1">
+            <span class="material-icons-outlined">chevron_left</span>
+          </button>
+          <button class="icon-button icon-button--tonal" aria-label="Nastepne" data-carousel="categories" data-dir="1">
+            <span class="material-icons-outlined">chevron_right</span>
+          </button>
+        </div>
+      </div>
+      <div class="carousel" id="categoriesCarousel">
+        <div class="carousel__track">
+          <a href="#" class="category-card">
+            <div class="category-card__image" style="background-color: var(--md-ref-primary-90)">
+              <span class="material-icons-outlined">checkroom</span>
+            </div>
+            <span class="category-card__label">Odziez</span>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-card__image" style="background-color: var(--md-ref-secondary-90)">
+              <span class="material-icons-outlined">footprint</span>
+            </div>
+            <span class="category-card__label">Obuwie</span>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-card__image" style="background-color: var(--md-ref-tertiary-90)">
+              <span class="material-icons-outlined">watch</span>
+            </div>
+            <span class="category-card__label">Akcesoria</span>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-card__image" style="background-color: var(--md-ref-error-90)">
+              <span class="material-icons-outlined">sports_esports</span>
+            </div>
+            <span class="category-card__label">Sport</span>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-card__image" style="background-color: var(--md-ref-primary-80)">
+              <span class="material-icons-outlined">diamond</span>
+            </div>
+            <span class="category-card__label">Bizuteria</span>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-card__image" style="background-color: var(--md-ref-secondary-80)">
+              <span class="material-icons-outlined">child_care</span>
+            </div>
+            <span class="category-card__label">Dzieci</span>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-card__image" style="background-color: var(--md-ref-tertiary-80)">
+              <span class="material-icons-outlined">weekend</span>
+            </div>
+            <span class="category-card__label">Dom</span>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-card__image" style="background-color: var(--md-ref-primary-95)">
+              <span class="material-icons-outlined">devices</span>
+            </div>
+            <span class="category-card__label">Elektronika</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+      <div class="promo-banner__content">
+        <span class="promo-banner__badge">-30%</span>
+        <h2 class="promo-banner__title">Wielka wyprzedaz wiosenna</h2>
+        <p class="promo-banner__text">Skorzystaj z rabatow do -30% na wybrane produkty. Oferta ograniczona czasowo!</p>
+        <a href="#" class="btn btn--filled btn--on-dark">Kup teraz</a>
+      </div>
+    </section>
+
+    <!-- Products Slider -->
+    <section class="section products">
+      <div class="section__header">
+        <h2 class="section__title">Polecane produkty</h2>
+        <div class="carousel-nav">
+          <button class="icon-button icon-button--tonal" aria-label="Poprzednie" data-carousel="products" data-dir="-1">
+            <span class="material-icons-outlined">chevron_left</span>
+          </button>
+          <button class="icon-button icon-button--tonal" aria-label="Nastepne" data-carousel="products" data-dir="1">
+            <span class="material-icons-outlined">chevron_right</span>
+          </button>
+        </div>
+      </div>
+      <div class="carousel carousel--products" id="productsCarousel">
+        <div class="carousel__track">
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <div class="product-card__image-placeholder">
+                <span class="material-icons-outlined">image</span>
+              </div>
+              <span class="product-card__chip">Nowosc</span>
+              <button class="icon-button product-card__fav" aria-label="Dodaj do ulubionych">
+                <span class="material-icons-outlined">favorite_border</span>
+              </button>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Odziez meska</span>
+              <h3 class="product-card__name">Kurtka przejsciowa Premium</h3>
+              <div class="product-card__rating">
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined">star_border</span>
+                <span class="product-card__reviews">(128)</span>
+              </div>
+              <div class="product-card__price">
+                <span class="product-card__price-current">299,99 zl</span>
+                <span class="product-card__price-old">429,99 zl</span>
+              </div>
+              <button class="btn btn--filled btn--full">Dodaj do koszyka</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <div class="product-card__image-placeholder">
+                <span class="material-icons-outlined">image</span>
+              </div>
+              <button class="icon-button product-card__fav" aria-label="Dodaj do ulubionych">
+                <span class="material-icons-outlined">favorite_border</span>
+              </button>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Obuwie damskie</span>
+              <h3 class="product-card__name">Sneakersy Urban Style</h3>
+              <div class="product-card__rating">
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="product-card__reviews">(64)</span>
+              </div>
+              <div class="product-card__price">
+                <span class="product-card__price-current">189,00 zl</span>
+              </div>
+              <button class="btn btn--filled btn--full">Dodaj do koszyka</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <div class="product-card__image-placeholder">
+                <span class="material-icons-outlined">image</span>
+              </div>
+              <span class="product-card__chip product-card__chip--promo">-25%</span>
+              <button class="icon-button product-card__fav" aria-label="Dodaj do ulubionych">
+                <span class="material-icons-outlined">favorite_border</span>
+              </button>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Akcesoria</span>
+              <h3 class="product-card__name">Skorzany pasek klasyczny</h3>
+              <div class="product-card__rating">
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined">star_border</span>
+                <span class="product-card__reviews">(42)</span>
+              </div>
+              <div class="product-card__price">
+                <span class="product-card__price-current">89,99 zl</span>
+                <span class="product-card__price-old">119,99 zl</span>
+              </div>
+              <button class="btn btn--filled btn--full">Dodaj do koszyka</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <div class="product-card__image-placeholder">
+                <span class="material-icons-outlined">image</span>
+              </div>
+              <span class="product-card__chip">Bestseller</span>
+              <button class="icon-button product-card__fav" aria-label="Dodaj do ulubionych">
+                <span class="material-icons-outlined">favorite_border</span>
+              </button>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Sport</span>
+              <h3 class="product-card__name">Legginsy treningowe Flex</h3>
+              <div class="product-card__rating">
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="material-icons-outlined star--filled">star</span>
+                <span class="product-card__reviews">(256)</span>
+              </div>
+              <div class="product-card__price">
+                <span class="product-card__price-current">149,00 zl</span>
+              </div>
+              <button class="btn btn--filled btn--full">Dodaj do koszyka</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">FoxShop</span>
+        <p class="footer__desc">Twoj sklep internetowy z najlepsza moda i akcesoriami. Dostarczamy jakosc i styl od 2020 roku.</p>
+        <div class="footer__socials">
+          <a href="#" class="icon-button" aria-label="Facebook"><span class="material-icons-outlined">public</span></a>
+          <a href="#" class="icon-button" aria-label="Instagram"><span class="material-icons-outlined">photo_camera</span></a>
+          <a href="#" class="icon-button" aria-label="YouTube"><span class="material-icons-outlined">play_circle</span></a>
+        </div>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4 class="footer__heading">Zakupy</h4>
+          <a href="#">Nowosci</a>
+          <a href="#">Promocje</a>
+          <a href="#">Bestsellery</a>
+          <a href="#">Karty podarunkowe</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Pomoc</h4>
+          <a href="#">Centrum pomocy</a>
+          <a href="#">Dostawa</a>
+          <a href="#">Zwroty</a>
+          <a href="#">Rozmiarowka</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Firma</h4>
+          <a href="#">O nas</a>
+          <a href="#">Kariera</a>
+          <a href="#">Regulamin</a>
+          <a href="#">Polityka prywatnosci</a>
+        </div>
+      </div>
+      <div class="footer__newsletter">
+        <h4 class="footer__heading">Newsletter</h4>
+        <p>Zapisz sie i otrzymaj 10% rabatu na pierwsze zakupy.</p>
+        <form class="footer__form">
+          <input type="email" class="text-field" placeholder="Twoj adres e-mail">
+          <button type="submit" class="btn btn--filled">Zapisz sie</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 FoxShop. Wszelkie prawa zastrzezone.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</body>
+</html>

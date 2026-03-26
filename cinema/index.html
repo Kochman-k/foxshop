@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CinemaBook — Rezerwacja miejsc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ====== SCREEN 1: Movie List ====== -->
+  <div class="screen active" id="screen-movies">
+    <!-- Top App Bar -->
+    <header class="top-bar">
+      <span class="top-bar__title">CinemaBook</span>
+      <div class="top-bar__actions">
+        <button class="icon-btn" aria-label="Szukaj"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></button>
+        <button class="icon-btn" aria-label="Konto"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z"/></svg></button>
+      </div>
+    </header>
+
+    <div class="screen__body">
+      <!-- Date chips -->
+      <div class="chip-row">
+        <button class="chip chip--selected">Dzis</button>
+        <button class="chip">Jutro</button>
+        <button class="chip">Czw 27.03</button>
+        <button class="chip">Pt 28.03</button>
+        <button class="chip">Sob 29.03</button>
+      </div>
+
+      <!-- Now playing -->
+      <h2 class="section-title">Teraz gramy</h2>
+      <div class="movie-list">
+
+        <div class="movie-card" data-movie="1">
+          <div class="movie-card__poster">
+            <div class="poster-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg></div>
+            <span class="movie-card__badge">8.2</span>
+          </div>
+          <div class="movie-card__info">
+            <h3 class="movie-card__title">Kosmiczna Odyseja</h3>
+            <span class="movie-card__meta">Sci-Fi &bull; 2h 15min</span>
+            <div class="movie-card__chips">
+              <span class="chip chip--small">2D</span>
+              <span class="chip chip--small">IMAX</span>
+              <span class="chip chip--small">Napisy</span>
+            </div>
+            <div class="movie-card__sessions">
+              <button class="session-btn" data-time="14:30">14:30</button>
+              <button class="session-btn" data-time="17:00">17:00</button>
+              <button class="session-btn" data-time="20:15">20:15</button>
+              <button class="session-btn session-btn--dimmed" data-time="23:00">23:00</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-movie="2">
+          <div class="movie-card__poster">
+            <div class="poster-placeholder poster-placeholder--warm"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg></div>
+            <span class="movie-card__badge">7.5</span>
+          </div>
+          <div class="movie-card__info">
+            <h3 class="movie-card__title">Ciche Miasteczko</h3>
+            <span class="movie-card__meta">Thriller &bull; 1h 48min</span>
+            <div class="movie-card__chips">
+              <span class="chip chip--small">2D</span>
+              <span class="chip chip--small">Dubbing</span>
+            </div>
+            <div class="movie-card__sessions">
+              <button class="session-btn" data-time="13:00">13:00</button>
+              <button class="session-btn" data-time="16:30">16:30</button>
+              <button class="session-btn" data-time="19:45">19:45</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="movie-card" data-movie="3">
+          <div class="movie-card__poster">
+            <div class="poster-placeholder poster-placeholder--cool"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg></div>
+            <span class="movie-card__badge">9.0</span>
+          </div>
+          <div class="movie-card__info">
+            <h3 class="movie-card__title">Ostatni Taniec</h3>
+            <span class="movie-card__meta">Dramat &bull; 2h 02min</span>
+            <div class="movie-card__chips">
+              <span class="chip chip--small">2D</span>
+              <span class="chip chip--small">Napisy</span>
+            </div>
+            <div class="movie-card__sessions">
+              <button class="session-btn" data-time="15:00">15:00</button>
+              <button class="session-btn" data-time="18:30">18:30</button>
+              <button class="session-btn" data-time="21:00">21:00</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <button class="bottom-nav__item bottom-nav__item--active">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
+        <span>Repertuar</span>
+      </button>
+      <button class="bottom-nav__item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22 10V6c0-1.11-.9-2-2-2H4c-1.1 0-1.99.89-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2zm-9 7.5h-2v-2h2v2zm0-4.5h-2v-2h2v2zm0-4.5h-2v-2h2v2z"/></svg>
+        <span>Moje bilety</span>
+      </button>
+      <button class="bottom-nav__item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <span>Kina</span>
+      </button>
+      <button class="bottom-nav__item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        <span>Profil</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ====== SCREEN 2: Seat Selection ====== -->
+  <div class="screen" id="screen-seats">
+    <header class="top-bar">
+      <button class="icon-btn" id="backToMovies" aria-label="Wstecz"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></button>
+      <div class="top-bar__center">
+        <span class="top-bar__title" id="seatScreenTitle">Kosmiczna Odyseja</span>
+        <span class="top-bar__subtitle" id="seatScreenSubtitle">Dzis, 17:00 &bull; Sala 3</span>
+      </div>
+      <div class="top-bar__actions">
+        <button class="icon-btn" aria-label="Info"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></button>
+      </div>
+    </header>
+
+    <div class="screen__body screen__body--seats">
+      <!-- Screen indicator -->
+      <div class="cinema-screen-indicator">
+        <div class="cinema-screen-curve"></div>
+        <span class="cinema-screen-label">EKRAN</span>
+      </div>
+
+      <!-- Seat map -->
+      <div class="seat-map" id="seatMap">
+        <!-- Row A -->
+        <div class="seat-row">
+          <span class="seat-row__label">A</span>
+          <div class="seat-row__seats">
+            <button class="seat" data-seat="A1"></button>
+            <button class="seat" data-seat="A2"></button>
+            <button class="seat" data-seat="A3"></button>
+            <button class="seat" data-seat="A4"></button>
+            <div class="seat-gap"></div>
+            <button class="seat" data-seat="A5"></button>
+            <button class="seat" data-seat="A6"></button>
+            <button class="seat" data-seat="A7"></button>
+            <button class="seat" data-seat="A8"></button>
+          </div>
+        </div>
+        <!-- Row B -->
+        <div class="seat-row">
+          <span class="seat-row__label">B</span>
+          <div class="seat-row__seats">
+            <button class="seat" data-seat="B1"></button>
+            <button class="seat" data-seat="B2"></button>
+            <button class="seat seat--taken" data-seat="B3" disabled></button>
+            <button class="seat seat--taken" data-seat="B4" disabled></button>
+            <div class="seat-gap"></div>
+            <button class="seat" data-seat="B5"></button>
+            <button class="seat seat--taken" data-seat="B6" disabled></button>
+            <button class="seat" data-seat="B7"></button>
+            <button class="seat" data-seat="B8"></button>
+          </div>
+        </div>
+        <!-- Row C -->
+        <div class="seat-row">
+          <span class="seat-row__label">C</span>
+          <div class="seat-row__seats">
+            <button class="seat" data-seat="C1"></button>
+            <button class="seat seat--taken" data-seat="C2" disabled></button>
+            <button class="seat seat--taken" data-seat="C3" disabled></button>
+            <button class="seat seat--taken" data-seat="C4" disabled></button>
+            <div class="seat-gap"></div>
+            <button class="seat seat--taken" data-seat="C5" disabled></button>
+            <button class="seat seat--taken" data-seat="C6" disabled></button>
+            <button class="seat" data-seat="C7"></button>
+            <button class="seat" data-seat="C8"></button>
+          </div>
+        </div>
+        <!-- Row D -->
+        <div class="seat-row">
+          <span class="seat-row__label">D</span>
+          <div class="seat-row__seats">
+            <button class="seat" data-seat="D1"></button>
+            <button class="seat" data-seat="D2"></button>
+            <button class="seat seat--taken" data-seat="D3" disabled></button>
+            <button class="seat" data-seat="D4"></button>
+            <div class="seat-gap"></div>
+            <button class="seat" data-seat="D5"></button>
+            <button class="seat seat--taken" data-seat="D6" disabled></button>
+            <button class="seat" data-seat="D7"></button>
+            <button class="seat" data-seat="D8"></button>
+          </div>
+        </div>
+        <!-- Row E -->
+        <div class="seat-row">
+          <span class="seat-row__label">E</span>
+          <div class="seat-row__seats">
+            <button class="seat" data-seat="E1"></button>
+            <button class="seat" data-seat="E2"></button>
+            <button class="seat" data-seat="E3"></button>
+            <button class="seat" data-seat="E4"></button>
+            <div class="seat-gap"></div>
+            <button class="seat" data-seat="E5"></button>
+            <button class="seat" data-seat="E6"></button>
+            <button class="seat" data-seat="E7"></button>
+            <button class="seat" data-seat="E8"></button>
+          </div>
+        </div>
+        <!-- Row F - VIP -->
+        <div class="seat-row">
+          <span class="seat-row__label">F</span>
+          <div class="seat-row__seats">
+            <button class="seat seat--vip" data-seat="F1"></button>
+            <button class="seat seat--vip" data-seat="F2"></button>
+            <button class="seat seat--vip seat--taken" data-seat="F3" disabled></button>
+            <button class="seat seat--vip seat--taken" data-seat="F4" disabled></button>
+            <div class="seat-gap"></div>
+            <button class="seat seat--vip" data-seat="F5"></button>
+            <button class="seat seat--vip" data-seat="F6"></button>
+            <button class="seat seat--vip seat--taken" data-seat="F7" disabled></button>
+            <button class="seat seat--vip" data-seat="F8"></button>
+          </div>
+        </div>
+        <!-- Row G - VIP -->
+        <div class="seat-row">
+          <span class="seat-row__label">G</span>
+          <div class="seat-row__seats">
+            <button class="seat seat--vip" data-seat="G1"></button>
+            <button class="seat seat--vip" data-seat="G2"></button>
+            <button class="seat seat--vip" data-seat="G3"></button>
+            <button class="seat seat--vip" data-seat="G4"></button>
+            <div class="seat-gap"></div>
+            <button class="seat seat--vip" data-seat="G5"></button>
+            <button class="seat seat--vip" data-seat="G6"></button>
+            <button class="seat seat--vip" data-seat="G7"></button>
+            <button class="seat seat--vip" data-seat="G8"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div class="seat-legend">
+        <div class="seat-legend__item"><span class="legend-dot legend-dot--available"></span> Dostepne</div>
+        <div class="seat-legend__item"><span class="legend-dot legend-dot--selected"></span> Wybrane</div>
+        <div class="seat-legend__item"><span class="legend-dot legend-dot--taken"></span> Zajete</div>
+        <div class="seat-legend__item"><span class="legend-dot legend-dot--vip"></span> VIP</div>
+      </div>
+    </div>
+
+    <!-- Bottom bar with selection info -->
+    <div class="selection-bar" id="selectionBar">
+      <div class="selection-bar__info">
+        <span class="selection-bar__seats" id="selectedSeatsLabel">Wybierz miejsca</span>
+        <span class="selection-bar__price" id="selectedPrice"></span>
+      </div>
+      <button class="btn btn--filled btn--disabled" id="confirmSeatsBtn" disabled>Dalej</button>
+    </div>
+  </div>
+
+  <!-- ====== SCREEN 3: Summary & Confirm ====== -->
+  <div class="screen" id="screen-summary">
+    <header class="top-bar">
+      <button class="icon-btn" id="backToSeats" aria-label="Wstecz"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></button>
+      <span class="top-bar__title">Podsumowanie</span>
+      <div class="top-bar__actions"></div>
+    </header>
+
+    <div class="screen__body">
+      <!-- Movie summary card -->
+      <div class="summary-card">
+        <div class="summary-card__poster">
+          <div class="poster-placeholder poster-placeholder--small"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg></div>
+        </div>
+        <div class="summary-card__details">
+          <h3 class="summary-card__title" id="summaryTitle">Kosmiczna Odyseja</h3>
+          <span class="summary-card__meta" id="summaryMeta">Sci-Fi &bull; 2h 15min</span>
+        </div>
+      </div>
+
+      <div class="summary-section">
+        <div class="summary-row">
+          <svg class="summary-row__icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>
+          <div>
+            <span class="summary-row__label">Data i godzina</span>
+            <span class="summary-row__value" id="summaryDate">Wt, 25 marca 2026 &bull; 17:00</span>
+          </div>
+        </div>
+        <div class="summary-row">
+          <svg class="summary-row__icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h10V2H10zm6 11c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zM4 4v16h2V4H4z"/></svg>
+          <div>
+            <span class="summary-row__label">Sala</span>
+            <span class="summary-row__value">Sala 3 &bull; IMAX</span>
+          </div>
+        </div>
+        <div class="summary-row">
+          <svg class="summary-row__icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4 18v3h3v-3h10v3h3v-6H4zm15-8h3v3h-3zM2 10h3v3H2zm15 3H7V5c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v8z"/></svg>
+          <div>
+            <span class="summary-row__label">Miejsca</span>
+            <span class="summary-row__value" id="summarySeats">—</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Ticket types -->
+      <h3 class="section-title section-title--small">Rodzaj biletu</h3>
+      <div class="ticket-types" id="ticketTypes">
+        <!-- filled dynamically -->
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Price breakdown -->
+      <div class="price-breakdown">
+        <div class="price-row">
+          <span>Bilety</span>
+          <span id="priceTickets">0,00 zl</span>
+        </div>
+        <div class="price-row">
+          <span>Oplata serwisowa</span>
+          <span>2,00 zl</span>
+        </div>
+        <div class="price-row price-row--total">
+          <span>Razem</span>
+          <span id="priceTotal">0,00 zl</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="selection-bar">
+      <div class="selection-bar__info">
+        <span class="selection-bar__seats">Do zaplaty</span>
+        <span class="selection-bar__price selection-bar__price--big" id="totalPayment">0,00 zl</span>
+      </div>
+      <button class="btn btn--filled" id="payBtn">Zaplac</button>
+    </div>
+  </div>
+
+  <!-- ====== SCREEN 4: Confirmation ====== -->
+  <div class="screen" id="screen-confirm">
+    <header class="top-bar">
+      <span class="top-bar__title">Potwierdzenie</span>
+      <div class="top-bar__actions">
+        <button class="icon-btn" id="closeConfirm" aria-label="Zamknij"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+      </div>
+    </header>
+
+    <div class="screen__body screen__body--center">
+      <div class="confirm-content">
+        <div class="confirm-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <h2 class="confirm-title">Rezerwacja potwierdzona!</h2>
+        <p class="confirm-text">Twoje bilety zostaly zarezerwowane. Znajdziesz je w zakladce "Moje bilety".</p>
+
+        <div class="ticket-preview">
+          <div class="ticket-preview__top">
+            <span class="ticket-preview__movie" id="confirmMovie">Kosmiczna Odyseja</span>
+            <span class="ticket-preview__detail" id="confirmDetail">Wt, 25.03 &bull; 17:00 &bull; Sala 3</span>
+          </div>
+          <div class="ticket-preview__divider">
+            <div class="ticket-preview__notch ticket-preview__notch--left"></div>
+            <div class="ticket-preview__dash"></div>
+            <div class="ticket-preview__notch ticket-preview__notch--right"></div>
+          </div>
+          <div class="ticket-preview__bottom">
+            <div class="ticket-preview__qr">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 11h2v2H3zm0-4h2v2H3zm4 4h2v2H7zM3 3h2v2H3zm4 0h2v2H7zm0 4h2v2H7zM3 7h2v2H3zm8-4h2v2h-2zm0 8h2v2h-2zm4-4h2v2h-2zm0 8h2v2h-2zm4 0h2v2h-2zm0-4h2v2h-2zm0-4h2v2h-2zm0-4h2v2h-2zm-8 8h2v2h-2zm-4 4h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm4-12h2v2h-2z"/><path d="M3 15h6v6H3zm2 2v2h2v-2z"/><path d="M3 3h6v6H3zm2 2v2h2V5z"/><path d="M15 3h6v6h-6zm2 2v2h2V5z"/></svg>
+            </div>
+            <span class="ticket-preview__seats" id="confirmSeats">Miejsca: —</span>
+            <span class="ticket-preview__id">Nr rezerwacji: #CB20260325</span>
+          </div>
+        </div>
+
+        <button class="btn btn--filled btn--full" id="backToHome">Wroc do repertuaru</button>
+        <button class="btn btn--outlined btn--full">Pobierz bilet (PDF)</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</body>
+</html>
