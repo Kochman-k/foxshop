@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foxshop — Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Figtree', sans-serif;
+      background: #f8fafc;
+      color: #1d293d;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 64px 24px;
+    }
+    .index {
+      max-width: 560px;
+      width: 100%;
+    }
+    .index__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+    .index__logo img {
+      width: 40px;
+      height: 40px;
+    }
+    .index__logo span {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1d293d;
+    }
+    .index__title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    .index__subtitle {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #90a1b9;
+      margin-bottom: 12px;
+    }
+    .index__subtitle:not(:first-of-type) {
+      margin-top: 32px;
+    }
+    .index__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .index__list a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #1d293d;
+      font-size: 15px;
+      font-weight: 500;
+      transition: background .15s;
+    }
+    .index__list a:hover {
+      background: #e2e8f0;
+    }
+    .index__list .tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: #e2e8f0;
+      color: #62748e;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    .index__list .tag--green {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+  </style>
+</head>
+<body>
+  <div class="index">
+    <div class="index__logo">
+      <img src="https://www.figma.com/api/mcp/asset/bb1a9455-7161-435f-94f8-970f27fce8d3" alt="Foxshop">
+      <span>Foxshop</span>
+    </div>
+
+    <h1 class="index__title">Index</h1>
+
+    <p class="index__subtitle">Pages</p>
+    <ul class="index__list">
+      <li><a href="index.html">Homepage <span class="tag">HTML</span></a></li>
+      <li><a href="products.html">Product Listing <span class="tag">PLP</span></a></li>
+      <li><a href="product.html">Product Detail <span class="tag">PDP</span></a></li>
+    </ul>
+
+    <p class="index__subtitle">Use cases</p>
+    <ul class="index__list">
+      <li><a href="products-promo.html">Promo Banner <span class="tag--green tag">PLP</span></a></li>
+      <li><a href="product-social.html">Social Proof <span class="tag--green tag">PDP</span></a></li>
+      <li><a href="product-lastseen.html">Last Seen — Side Panel <span class="tag--green tag">PDP</span></a></li>
+      <li><a href="product-lastseen-bar.html">Last Seen — Bottom Bar <span class="tag--green tag">PDP</span></a></li>
+      <li><a href="product-lastseen-bubble.html">Last Seen — Bubble <span class="tag--green tag">PDP</span></a></li>
+    </ul>
+  </div>
+</body>
+</html>
