@@ -49,6 +49,7 @@
 }
 
 .pdp__thumb {
+  position: relative;
   width: 80px;
   height: 80px;
   border-radius: 12px;
@@ -714,8 +715,11 @@
   border: none;
 }
 .lastseen__item {
+  position: relative;
+  overflow: hidden;
   width: 148px;
   flex-shrink: 0;
+  border-radius: 8px;
 }
 .lastseen__item img {
   width: 100%;
@@ -781,9 +785,12 @@
 }
 .lastseen-bar__items::-webkit-scrollbar { display: none; }
 .lastseen-bar__item {
+  position: relative;
+  overflow: hidden;
   width: 56px;
   height: 56px;
   flex-shrink: 0;
+  border-radius: 8px;
 }
 .lastseen-bar__item img {
   width: 100%;
@@ -886,6 +893,11 @@
   text-transform: uppercase;
   letter-spacing: .5px;
   color: var(--slate-500, #62748e);
+}
+.lastseen-bubble__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
 }
 .lastseen-bubble__item img {
   width: 100%;

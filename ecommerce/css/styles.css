@@ -17,6 +17,43 @@
   --white: #ffffff;
 }
 
+/* ===== Image Skeleton / Shimmer Preloader ===== */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.img-skeleton {
+  position: relative;
+  overflow: hidden;
+}
+.img-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(90deg, var(--slate-100) 0%, var(--slate-50) 40%, var(--slate-100) 80%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.img-skeleton.img-loaded::after {
+  animation: none;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.img-skeleton img {
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.img-skeleton.img-loaded img {
+  opacity: 1;
+}
+[data-theme="dark"] .img-skeleton::after {
+  background: linear-gradient(90deg, #1e293b 0%, #2a3a50 40%, #1e293b 80%);
+  background-size: 800px 100%;
+}
+
 /* ===== Reset ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -601,6 +638,8 @@ img { max-width: 100%; display: block; }
   gap: 12px;
 }
 .category-tile__img {
+  position: relative;
+  overflow: hidden;
   width: 205px;
   height: 205px;
   border-radius: 24px;
