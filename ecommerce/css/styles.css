@@ -43,11 +43,11 @@
   transition: opacity .3s ease;
 }
 .img-skeleton img {
-  opacity: 0;
-  transition: opacity .3s ease;
+  opacity: 0 !important;
 }
 .img-skeleton.img-loaded img {
-  opacity: 1;
+  opacity: 1 !important;
+  transition: opacity .3s ease, transform .4s ease !important;
 }
 [data-theme="dark"] .img-skeleton::after {
   background: linear-gradient(90deg, #1e293b 0%, #2a3a50 40%, #1e293b 80%);
