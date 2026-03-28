@@ -42,11 +42,15 @@
   opacity: 0;
   transition: opacity .3s ease;
 }
-.img-skeleton img {
+.img-skeleton:not(.img-loaded) img {
   opacity: 0 !important;
 }
 .img-skeleton.img-loaded img {
   opacity: 1 !important;
+}
+.img-skeleton.img-loaded img,
+.product-card__img,
+.plp-card__img {
   transition: opacity .3s ease, transform .4s ease !important;
 }
 [data-theme="dark"] .img-skeleton::after {
@@ -225,12 +229,10 @@ img { max-width: 100%; display: block; }
   transition: opacity .25s ease, visibility .25s ease;
   z-index: 99;
   pointer-events: none;
-  /* Own glassmorphism — matches navbar */
-  background: rgba(255, 255, 255, .75);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  /* Solid-ish background (nested backdrop-filter doesn't work reliably) */
+  background: rgba(255, 255, 255, .96);
   border-radius: 0 0 24px 24px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.1);
+  box-shadow: 0 12px 40px rgba(0,0,0,.12);
 }
 
 .navbar__dropdown:hover .mega-menu {
@@ -239,10 +241,20 @@ img { max-width: 100%; display: block; }
   pointer-events: auto;
 }
 
+/* Hover bridge — prevents menu closing when moving mouse from link to menu */
+.navbar__dropdown .mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
 .mega-menu__inner {
   display: flex;
   gap: 32px;
-  border-top: 1px solid rgba(0, 0, 0, .08);
+  border-top: 1px solid rgba(0, 0, 0, .06);
   padding: 32px 22px;
   padding-right: 280px;
   min-height: 260px;
@@ -333,8 +345,8 @@ img { max-width: 100%; display: block; }
 
 /* Dark mode mega-menu */
 [data-theme="dark"] .mega-menu {
-  background: rgba(17, 17, 24, .75);
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  background: rgba(17, 17, 24, .97);
+  box-shadow: 0 12px 40px rgba(0,0,0,.4);
 }
 [data-theme="dark"] .mega-menu__inner {
   border-color: rgba(255, 255, 255, .08);
