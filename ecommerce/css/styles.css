@@ -163,10 +163,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 31px;
-  padding: 0 24px;
-}
-.navbar.navbar--scrolled .navbar__inner {
-  padding: 0 28px;
+  padding: 0;
 }
 .navbar__brand {
   display: flex;
