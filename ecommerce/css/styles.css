@@ -168,11 +168,13 @@ img { max-width: 100%; display: block; }
   padding: 0 22px;
   overflow: visible;
 }
-/* When menu is open: flatten bottom, reduce top radius to match submenu */
+/* When menu is open: unified style — disable blur on navbar, use matching opaque bg */
 .navbar.navbar--menu-open.navbar--scrolled {
   border-radius: 24px 24px 0 0;
   box-shadow: none;
-  background: rgba(255, 255, 255, .82);
+  background: rgba(255, 255, 255, .92);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 /* Non-scrolled + menu open */
 .navbar__inner {
@@ -233,9 +235,9 @@ img { max-width: 100%; display: block; }
   transition: opacity .25s ease, visibility .25s ease;
   z-index: 99;
   pointer-events: none;
-  background: rgba(255, 255, 255, .82);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, .92);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
   border-radius: 0 0 24px 24px;
   box-shadow: 0 12px 40px rgba(0,0,0,.1);
 }
@@ -340,8 +342,11 @@ img { max-width: 100%; display: block; }
 
 /* Dark mode mega-menu */
 [data-theme="dark"] .mega-menu {
-  background: rgba(17, 17, 24, .82);
+  background: rgba(17, 17, 24, .95);
   box-shadow: 0 12px 40px rgba(0,0,0,.4);
+}
+[data-theme="dark"] .navbar.navbar--menu-open.navbar--scrolled {
+  background: rgba(17, 17, 24, .95);
 }
 [data-theme="dark"] .mega-menu__inner {
   border-color: rgba(255, 255, 255, .08);
