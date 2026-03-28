@@ -1,9 +1,10 @@
-/* Navbar scroll elevation — adds .navbar--scrolled class after scrolling past threshold */
+/* Navbar scroll elevation + mega-menu open state */
 (function () {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
 
-  const THRESHOLD = 32; // px from top before activating
+  /* ===== Scroll: adds .navbar--scrolled ===== */
+  const THRESHOLD = 32;
   let ticking = false;
 
   function update() {
@@ -22,6 +23,17 @@
     }
   }, { passive: true });
 
-  // Initial check (e.g. page reloaded while scrolled)
   update();
+
+  /* ===== Hover: adds .navbar--menu-open when any dropdown is active ===== */
+  const dropdowns = navbar.querySelectorAll('.navbar__dropdown');
+
+  dropdowns.forEach(function (dd) {
+    dd.addEventListener('mouseenter', function () {
+      navbar.classList.add('navbar--menu-open');
+    });
+    dd.addEventListener('mouseleave', function () {
+      navbar.classList.remove('navbar--menu-open');
+    });
+  });
 })();
