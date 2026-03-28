@@ -25,12 +25,19 @@
 
   update();
 
-  /* ===== Hover: toggle .navbar--menu-open ===== */
+  /* ===== Hover: toggle .navbar--menu-open + measure menu height ===== */
   const dropdowns = navbar.querySelectorAll('.navbar__dropdown');
 
   dropdowns.forEach(function (dd) {
     dd.addEventListener('mouseenter', function () {
       navbar.classList.add('navbar--menu-open');
+      // Measure mega-menu height for the ::before glass surface
+      requestAnimationFrame(function () {
+        var menu = dd.querySelector('.mega-menu');
+        if (menu) {
+          navbar.style.setProperty('--menu-height', menu.offsetHeight + 'px');
+        }
+      });
     });
     dd.addEventListener('mouseleave', function () {
       navbar.classList.remove('navbar--menu-open');
