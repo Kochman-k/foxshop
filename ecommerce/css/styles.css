@@ -248,11 +248,17 @@ img { max-width: 100%; display: block; }
   right: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .12s ease, visibility .12s ease;
   z-index: 99;
   pointer-events: none;
   background: transparent;
   border-radius: 0 0 24px 24px;
+  overflow: hidden;
+}
+
+/* Inner content slides horizontally */
+.mega-menu__inner {
+  transform: translateX(0);
+  transition: opacity .18s ease, transform .25s cubic-bezier(.4, 0, .2, 1);
 }
 
 /* JS-controlled via .mega-menu--visible (not CSS :hover) */
@@ -260,7 +266,25 @@ img { max-width: 100%; display: block; }
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transition: opacity .2s ease .06s, visibility .2s ease .06s;
+  transition: opacity .15s ease;
+}
+
+/* Directional slide: entering from right (navigating right in menu) */
+.mega-menu--enter-right .mega-menu__inner {
+  animation: slideFromRight .28s cubic-bezier(.4, 0, .2, 1) forwards;
+}
+/* Directional slide: entering from left (navigating left in menu) */
+.mega-menu--enter-left .mega-menu__inner {
+  animation: slideFromLeft .28s cubic-bezier(.4, 0, .2, 1) forwards;
+}
+
+@keyframes slideFromRight {
+  from { transform: translateX(40px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideFromLeft {
+  from { transform: translateX(-40px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
 }
 
 .mega-menu__inner {

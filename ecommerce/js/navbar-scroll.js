@@ -1,4 +1,4 @@
-/* Navbar scroll elevation + morphing mega-menu */
+/* Navbar scroll elevation + morphing mega-menu with directional slide */
 (function () {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
@@ -25,11 +25,12 @@
 
   update();
 
-  /* ===== Morphing mega-menu with cross-fade & height animation ===== */
+  /* ===== Morphing mega-menu with directional slide ===== */
   const CLOSE_DELAY = 250;
-  const dropdowns = navbar.querySelectorAll('.navbar__dropdown');
+  const dropdowns = Array.from(navbar.querySelectorAll('.navbar__dropdown'));
   let closeTimer = null;
   let activeDD = null;
+  let activeIndex = -1;
   let isOpen = false;
 
   function openMenu(dd) {
@@ -38,28 +39,42 @@
       closeTimer = null;
     }
 
+    var newIndex = dropdowns.indexOf(dd);
     var isSwitching = isOpen && activeDD && activeDD !== dd;
+    var direction = 'right'; // default for first open
 
-    // Hide previous menu content
-    if (activeDD && activeDD !== dd) {
+    if (isSwitching && activeIndex >= 0) {
+      direction = newIndex > activeIndex ? 'right' : 'left';
+
+      // Hide previous menu
       var prevMenu = activeDD.querySelector('.mega-menu');
-      if (prevMenu) prevMenu.classList.remove('mega-menu--visible');
+      if (prevMenu) {
+        prevMenu.classList.remove('mega-menu--visible', 'mega-menu--enter-left', 'mega-menu--enter-right');
+      }
     }
 
     activeDD = dd;
+    activeIndex = newIndex;
     var menu = dd.querySelector('.mega-menu');
     if (!menu) return;
 
-    // If first open (not switching), add the open class
     if (!isOpen) {
       navbar.classList.add('navbar--menu-open');
       isOpen = true;
     }
 
-    // Show new menu content
+    // Remove old direction classes then add new one
+    menu.classList.remove('mega-menu--enter-left', 'mega-menu--enter-right');
+
+    if (isSwitching) {
+      // Force reflow to restart animation
+      void menu.offsetWidth;
+      menu.classList.add('mega-menu--enter-' + direction);
+    }
+
     menu.classList.add('mega-menu--visible');
 
-    // Measure and set height — this animates the glass ::before
+    // Measure height for ::before glass
     requestAnimationFrame(function () {
       navbar.style.setProperty('--menu-height', menu.offsetHeight + 'px');
     });
@@ -69,9 +84,12 @@
     closeTimer = setTimeout(function () {
       if (activeDD) {
         var menu = activeDD.querySelector('.mega-menu');
-        if (menu) menu.classList.remove('mega-menu--visible');
+        if (menu) {
+          menu.classList.remove('mega-menu--visible', 'mega-menu--enter-left', 'mega-menu--enter-right');
+        }
       }
       activeDD = null;
+      activeIndex = -1;
       isOpen = false;
       navbar.classList.remove('navbar--menu-open');
       navbar.style.setProperty('--menu-height', '0px');
