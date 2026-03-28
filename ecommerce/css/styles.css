@@ -168,13 +168,10 @@ img { max-width: 100%; display: block; }
   padding: 0 22px;
   overflow: visible;
 }
-/* When menu is open: unified style — disable blur on navbar, use matching opaque bg */
+/* When menu is open: keep glassmorphism, just change shape */
 .navbar.navbar--menu-open.navbar--scrolled {
   border-radius: 24px 24px 0 0;
   box-shadow: none;
-  background: rgba(255, 255, 255, .92);
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
 }
 /* Non-scrolled + menu open */
 .navbar__inner {
@@ -235,9 +232,7 @@ img { max-width: 100%; display: block; }
   transition: opacity .25s ease, visibility .25s ease;
   z-index: 99;
   pointer-events: none;
-  background: rgba(255, 255, 255, .92);
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  background: rgba(240, 243, 247, .93);
   border-radius: 0 0 24px 24px;
   box-shadow: 0 12px 40px rgba(0,0,0,.1);
 }
@@ -344,9 +339,6 @@ img { max-width: 100%; display: block; }
 [data-theme="dark"] .mega-menu {
   background: rgba(17, 17, 24, .95);
   box-shadow: 0 12px 40px rgba(0,0,0,.4);
-}
-[data-theme="dark"] .navbar.navbar--menu-open.navbar--scrolled {
-  background: rgba(17, 17, 24, .95);
 }
 [data-theme="dark"] .mega-menu__inner {
   border-color: rgba(255, 255, 255, .08);
