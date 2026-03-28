@@ -40,5 +40,8 @@
 
     img.addEventListener('load', onLoaded);
     img.addEventListener('error', onLoaded); // remove skeleton even on error
+
+    // Fallback: force show after 3s if load/error never fires
+    setTimeout(onLoaded, 3000);
   });
 })();
