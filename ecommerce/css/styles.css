@@ -164,21 +164,12 @@ img { max-width: 100%; display: block; }
   padding: 0 22px;
   overflow: visible;
 }
-/* When menu is open: square off bottom corners so ::after extends seamlessly */
+/* When menu is open: square off bottom of navbar pill */
 .navbar.navbar--menu-open.navbar--scrolled {
   border-radius: 54px 54px 0 0;
-  box-shadow: none; /* shadow moves to ::after */
+  box-shadow: none;
 }
-/* Non-scrolled state: give navbar glassmorphism when menu opens */
-.navbar.navbar--menu-open:not(.navbar--scrolled) {
-  background: rgba(255, 255, 255, .85);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  max-width: 1364px;
-  margin: 0 auto;
-  padding: 0 22px;
-  border-radius: 0;
-}
+/* Non-scrolled + menu open: no special navbar changes */
 .navbar__inner {
   max-width: 1320px;
   margin: 0 auto;
@@ -226,17 +217,20 @@ img { max-width: 100%; display: block; }
 .navbar__link:hover { color: var(--slate-800); background: rgba(0,0,0,.04); }
 .navbar__dropdown:hover .navbar__link svg { transform: rotate(180deg); }
 
-/* Mega Menu — absolutely positioned inside navbar */
+/* Mega Menu — fixed, JS positions it to match navbar edges */
 .mega-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  position: fixed;
   opacity: 0;
   visibility: hidden;
   transition: opacity .25s ease, visibility .25s ease;
-  z-index: 200;
+  z-index: 99;
   pointer-events: none;
+  /* Own glassmorphism — matches navbar */
+  background: rgba(255, 255, 255, .75);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.1);
 }
 
 .navbar__dropdown:hover .mega-menu {
@@ -253,31 +247,6 @@ img { max-width: 100%; display: block; }
   padding-right: 280px;
   min-height: 260px;
   position: relative;
-}
-
-/* Navbar background extension when menu is open —
-   uses ::after to extend the glassmorphism bg below the bar */
-.navbar::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  height: 0;
-  background: inherit;
-  -webkit-backdrop-filter: inherit;
-  backdrop-filter: inherit;
-  border-radius: 0 0 24px 24px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.1);
-  transition: height .25s ease, opacity .25s ease;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 199;
-}
-.navbar.navbar--menu-open::after {
-  height: var(--menu-height, 320px);
-  opacity: 1;
-  pointer-events: auto;
 }
 
 .mega-menu__col {
@@ -363,11 +332,12 @@ img { max-width: 100%; display: block; }
 }
 
 /* Dark mode mega-menu */
+[data-theme="dark"] .mega-menu {
+  background: rgba(17, 17, 24, .75);
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+}
 [data-theme="dark"] .mega-menu__inner {
   border-color: rgba(255, 255, 255, .08);
-}
-[data-theme="dark"] .navbar.navbar--menu-open:not(.navbar--scrolled) {
-  background: rgba(17, 17, 24, .85);
 }
 [data-theme="dark"] .mega-menu__col h4 { color: var(--text); }
 [data-theme="dark"] .mega-menu__col a { color: var(--text-secondary); }
