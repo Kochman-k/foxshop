@@ -141,11 +141,13 @@ img { max-width: 100%; display: block; }
 
 /* ===== Navbar ===== */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   background: transparent;
-  transition: background .4s ease, box-shadow .4s ease, border-radius .4s ease, top .4s ease, margin .4s ease;
+  transition: background .4s ease, box-shadow .4s ease, border-radius .4s ease, top .4s ease, left .4s ease, right .4s ease;
 }
 .navbar.navbar--scrolled {
   background: rgba(255, 255, 255, .6);
@@ -153,8 +155,13 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, .08), 0 1px 3px rgba(0, 0, 0, .04);
   border-radius: 44px;
-  margin: 0 24px;
   top: 22px;
+  left: 24px;
+  right: 24px;
+}
+/* Spacer to compensate for fixed navbar */
+.navbar + * {
+  margin-top: 88px;
 }
 .navbar__inner {
   max-width: 1320px;
