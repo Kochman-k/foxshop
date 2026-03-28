@@ -168,17 +168,7 @@ img { max-width: 100%; display: block; }
 .navbar.navbar--menu-open.navbar--scrolled {
   border-radius: 54px 54px 24px 24px;
 }
-/* Non-scrolled state: give navbar a background when menu is open */
-.navbar.navbar--menu-open:not(.navbar--scrolled) {
-  background: rgba(255, 255, 255, .95);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border-radius: 0 0 24px 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, .1);
-  max-width: 1364px;
-  margin: 0 auto;
-  padding: 0 22px;
-}
+/* Non-scrolled state: no special navbar treatment, mega-menu has own bg */
 .navbar__inner {
   max-width: 1320px;
   margin: 0 auto;
@@ -226,21 +216,35 @@ img { max-width: 100%; display: block; }
 .navbar__link:hover { color: var(--slate-800); background: rgba(0,0,0,.04); }
 .navbar__dropdown:hover .navbar__link svg { transform: rotate(180deg); }
 
-/* Mega Menu */
+/* Mega Menu — fixed, positioned dynamically via JS to match navbar bounds */
 .mega-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  position: fixed;
   opacity: 0;
   visibility: hidden;
   transition: opacity .25s ease, visibility .25s ease;
   z-index: 200;
+  pointer-events: none;
+  background: rgba(255, 255, 255, .85);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.1);
 }
 
 .navbar__dropdown:hover .mega-menu {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
+}
+
+/* Keep mouse hover bridge between navbar link and mega-menu */
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
 }
 
 .mega-menu__inner {
@@ -251,7 +255,8 @@ img { max-width: 100%; display: block; }
   padding-right: 280px;
   min-height: 260px;
   position: relative;
-  background: transparent;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .mega-menu__col {
@@ -337,8 +342,10 @@ img { max-width: 100%; display: block; }
 }
 
 /* Dark mode mega-menu */
+[data-theme="dark"] .mega-menu {
+  background: rgba(17, 17, 24, .85);
+}
 [data-theme="dark"] .mega-menu__inner {
-  background: transparent;
   border-color: rgba(255, 255, 255, .08);
 }
 [data-theme="dark"] .navbar.navbar--menu-open:not(.navbar--scrolled) {
