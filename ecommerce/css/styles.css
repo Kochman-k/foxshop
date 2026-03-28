@@ -931,7 +931,7 @@ img { max-width: 100%; display: block; }
   color: var(--slate-300);
   transition: color .2s;
   position: relative;
-  display: inline;
+  width: fit-content;
 }
 .footer__col a::before {
   content: '';
