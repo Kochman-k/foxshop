@@ -144,10 +144,17 @@ img { max-width: 100%; display: block; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, .85);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  transition: background .3s ease;
+  background: transparent;
+  transition: background .4s ease, box-shadow .4s ease, border-radius .4s ease, top .4s ease, margin .4s ease;
+}
+.navbar.navbar--scrolled {
+  background: rgba(255, 255, 255, .6);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .08), 0 1px 3px rgba(0, 0, 0, .04);
+  border-radius: 20px;
+  margin: 8px 16px 0;
+  top: 0;
 }
 .navbar__inner {
   max-width: 1320px;
@@ -156,6 +163,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 31px;
+  padding: 0 24px;
 }
 .navbar__brand {
   display: flex;
@@ -1088,7 +1096,11 @@ img { max-width: 100%; display: block; }
 
 /* Navbar */
 [data-theme="dark"] .navbar {
-  background: rgba(17, 17, 24, .85);
+  background: transparent;
+}
+[data-theme="dark"] .navbar.navbar--scrolled {
+  background: rgba(17, 17, 24, .55);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .25), 0 1px 3px rgba(0, 0, 0, .15);
 }
 [data-theme="dark"] .navbar__logo-text {
   color: var(--text);
