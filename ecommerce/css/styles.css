@@ -63,6 +63,7 @@ body {
   color: var(--slate-800);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  padding-top: 88px;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -161,10 +162,6 @@ img { max-width: 100%; display: block; }
   max-width: 1364px;
   margin: 0 auto;
   padding: 0 22px;
-}
-/* Spacer to compensate for fixed navbar */
-.navbar + * {
-  margin-top: 88px;
 }
 .navbar__inner {
   max-width: 1320px;
