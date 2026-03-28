@@ -244,12 +244,6 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
-/* Inner content slides horizontally */
-.mega-menu__inner {
-  transform: translateX(0);
-  transition: opacity .18s ease, transform .25s cubic-bezier(.4, 0, .2, 1);
-}
-
 /* JS-controlled via .mega-menu--visible (not CSS :hover) */
 .mega-menu.mega-menu--visible {
   opacity: 1;

@@ -63,20 +63,22 @@
       isOpen = true;
     }
 
-    // Remove old direction classes then add new one
+    // Remove old direction classes
     menu.classList.remove('mega-menu--enter-left', 'mega-menu--enter-right');
 
-    if (isSwitching) {
-      // Force reflow to restart animation
-      void menu.offsetWidth;
-      menu.classList.add('mega-menu--enter-' + direction);
-    }
-
+    // Make visible FIRST (so animations can run)
     menu.classList.add('mega-menu--visible');
 
     // Measure height for ::before glass
     requestAnimationFrame(function () {
       navbar.style.setProperty('--menu-height', menu.offsetHeight + 'px');
+
+      // Add direction class AFTER visibility — in next frame so animation triggers
+      if (isSwitching) {
+        requestAnimationFrame(function () {
+          menu.classList.add('mega-menu--enter-' + direction);
+        });
+      }
     });
   }
 
