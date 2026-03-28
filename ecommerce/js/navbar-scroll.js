@@ -69,17 +69,16 @@
     // Make visible FIRST (so animations can run)
     menu.classList.add('mega-menu--visible');
 
-    // Measure height for ::before glass
-    requestAnimationFrame(function () {
-      navbar.style.setProperty('--menu-height', menu.offsetHeight + 'px');
+    // Set total glass height (navbar + submenu) after layout
+    setTimeout(function () {
+      var totalHeight = navbar.offsetHeight + menu.offsetHeight;
+      navbar.style.setProperty('--glass-height', totalHeight + 'px');
 
-      // Add direction class AFTER visibility — in next frame so animation triggers
+      // Add direction class AFTER visibility so animation triggers
       if (isSwitching) {
-        requestAnimationFrame(function () {
-          menu.classList.add('mega-menu--enter-' + direction);
-        });
+        menu.classList.add('mega-menu--enter-' + direction);
       }
-    });
+    }, 20);
   }
 
   function scheduleClose() {
@@ -94,7 +93,7 @@
       activeIndex = -1;
       isOpen = false;
       navbar.classList.remove('navbar--menu-open');
-      navbar.style.setProperty('--menu-height', '0px');
+      navbar.style.removeProperty('--glass-height');
       closeTimer = null;
     }, CLOSE_DELAY);
   }
