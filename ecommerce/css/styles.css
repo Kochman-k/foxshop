@@ -154,7 +154,7 @@ img { max-width: 100%; display: block; }
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, .08), 0 1px 3px rgba(0, 0, 0, .04);
-  border-radius: 44px;
+  border-radius: 56px;
   top: 22px;
   left: 24px;
   right: 24px;
@@ -1108,7 +1108,6 @@ img { max-width: 100%; display: block; }
 [data-theme="dark"] .navbar.navbar--scrolled {
   background: rgba(17, 17, 24, .55);
   box-shadow: 0 4px 30px rgba(0, 0, 0, .25), 0 1px 3px rgba(0, 0, 0, .15);
-  border-radius: 44px;
 }
 [data-theme="dark"] .navbar__logo-text {
   color: var(--text);
