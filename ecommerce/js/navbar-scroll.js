@@ -25,33 +25,22 @@
 
   update();
 
-  /* ===== Mega-menu: position to match navbar bounds ===== */
+  /* ===== Mega-menu: set --menu-height for ::after background extension ===== */
   const dropdowns = navbar.querySelectorAll('.navbar__dropdown');
-
-  function positionMegaMenu(dd) {
-    const menu = dd.querySelector('.mega-menu');
-    if (!menu) return;
-    const navRect = navbar.getBoundingClientRect();
-    menu.style.top = navRect.bottom + 'px';
-    menu.style.left = navRect.left + 'px';
-    menu.style.right = (window.innerWidth - navRect.right) + 'px';
-  }
 
   dropdowns.forEach(function (dd) {
     dd.addEventListener('mouseenter', function () {
+      var menu = dd.querySelector('.mega-menu');
+      if (!menu) return;
       navbar.classList.add('navbar--menu-open');
-      positionMegaMenu(dd);
+      // Measure the mega-menu height and set CSS variable
+      requestAnimationFrame(function () {
+        var h = menu.offsetHeight;
+        navbar.style.setProperty('--menu-height', h + 'px');
+      });
     });
     dd.addEventListener('mouseleave', function () {
       navbar.classList.remove('navbar--menu-open');
     });
   });
-
-  /* Reposition on scroll/resize while open */
-  function repositionOpen() {
-    var openDd = navbar.querySelector('.navbar__dropdown:hover');
-    if (openDd) positionMegaMenu(openDd);
-  }
-  window.addEventListener('scroll', repositionOpen, { passive: true });
-  window.addEventListener('resize', repositionOpen, { passive: true });
 })();
