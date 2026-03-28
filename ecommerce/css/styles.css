@@ -1337,6 +1337,38 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===== Responsive ===== */
+/* Navbar RWD: full-width on smaller screens */
+@media (max-width: 1420px) {
+  .navbar.navbar--scrolled {
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+  .navbar.navbar--menu-open:not(.navbar--scrolled) {
+    max-width: calc(100% - 32px);
+  }
+}
+@media (max-width: 768px) {
+  .navbar.navbar--scrolled {
+    border-radius: 0;
+    top: 0;
+    max-width: 100%;
+    padding: 0 16px;
+  }
+  .navbar.navbar--menu-open:not(.navbar--scrolled) {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+  .navbar.navbar--menu-open:not(.navbar--scrolled)::before {
+    border-radius: 0;
+  }
+  .navbar.navbar--menu-open.navbar--scrolled {
+    border-radius: 0;
+  }
+  .navbar.navbar--menu-open.navbar--scrolled::before {
+    border-radius: 0;
+  }
+}
+
 @media (max-width: 1380px) {
   .navbar__inner,
   .hero-carousel,
