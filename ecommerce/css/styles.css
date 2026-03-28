@@ -930,8 +930,26 @@ img { max-width: 100%; display: block; }
   font-size: 14px;
   color: var(--slate-300);
   transition: color .2s;
+  position: relative;
+  display: inline;
+}
+.footer__col a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background-color: currentColor;
+  transform-origin: right;
+  transform: scaleX(0) rotate(.001deg);
+  transition: transform .35s cubic-bezier(.625,.05,0,1);
 }
 .footer__col a:hover { color: var(--white); }
+.footer__col a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1) rotate(.001deg);
+}
 .footer__divider {
   border: none;
   height: 1px;
