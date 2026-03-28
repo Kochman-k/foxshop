@@ -1,4 +1,4 @@
-/* Navbar scroll elevation + mega-menu with delay & animation */
+/* Navbar scroll elevation + morphing mega-menu */
 (function () {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
@@ -25,20 +25,22 @@
 
   update();
 
-  /* ===== Mega-menu: hover with delay to prevent flicker ===== */
-  const CLOSE_DELAY = 220; // ms before closing — gives time to reach submenu
+  /* ===== Morphing mega-menu with cross-fade & height animation ===== */
+  const CLOSE_DELAY = 250;
   const dropdowns = navbar.querySelectorAll('.navbar__dropdown');
   let closeTimer = null;
   let activeDD = null;
+  let isOpen = false;
 
   function openMenu(dd) {
-    // Cancel any pending close
     if (closeTimer) {
       clearTimeout(closeTimer);
       closeTimer = null;
     }
 
-    // Close previous if different
+    var isSwitching = isOpen && activeDD && activeDD !== dd;
+
+    // Hide previous menu content
     if (activeDD && activeDD !== dd) {
       var prevMenu = activeDD.querySelector('.mega-menu');
       if (prevMenu) prevMenu.classList.remove('mega-menu--visible');
@@ -48,10 +50,16 @@
     var menu = dd.querySelector('.mega-menu');
     if (!menu) return;
 
-    navbar.classList.add('navbar--menu-open');
+    // If first open (not switching), add the open class
+    if (!isOpen) {
+      navbar.classList.add('navbar--menu-open');
+      isOpen = true;
+    }
+
+    // Show new menu content
     menu.classList.add('mega-menu--visible');
 
-    // Measure height for ::before glass
+    // Measure and set height — this animates the glass ::before
     requestAnimationFrame(function () {
       navbar.style.setProperty('--menu-height', menu.offsetHeight + 'px');
     });
@@ -64,7 +72,9 @@
         if (menu) menu.classList.remove('mega-menu--visible');
       }
       activeDD = null;
+      isOpen = false;
       navbar.classList.remove('navbar--menu-open');
+      navbar.style.setProperty('--menu-height', '0px');
       closeTimer = null;
     }, CLOSE_DELAY);
   }
@@ -78,9 +88,8 @@
     });
   });
 
-  // Also keep menu open when hovering over the mega-menu itself
-  // (it's positioned outside the dropdown due to position:absolute on navbar)
-  navbar.addEventListener('mouseenter', function (e) {
+  // Keep menu open when hovering the mega-menu area
+  navbar.addEventListener('mouseover', function (e) {
     if (e.target.closest && e.target.closest('.mega-menu') && closeTimer) {
       clearTimeout(closeTimer);
       closeTimer = null;

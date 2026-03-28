@@ -190,6 +190,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 4px 30px rgba(0, 0, 0, .08), 0 1px 3px rgba(0, 0, 0, .04);
   z-index: -1;
   pointer-events: none;
+  transition: height .25s cubic-bezier(.4, 0, .2, 1);
 }
 /* Non-scrolled + menu open */
 .navbar__inner {
@@ -247,8 +248,7 @@ img { max-width: 100%; display: block; }
   right: 0;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-6px);
-  transition: opacity .15s ease, visibility .15s ease, transform .15s ease;
+  transition: opacity .12s ease, visibility .12s ease;
   z-index: 99;
   pointer-events: none;
   background: transparent;
@@ -260,7 +260,7 @@ img { max-width: 100%; display: block; }
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateY(0);
+  transition: opacity .2s ease .06s, visibility .2s ease .06s;
 }
 
 .mega-menu__inner {
