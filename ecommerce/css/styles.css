@@ -199,9 +199,9 @@ img { max-width: 100%; display: block; }
   justify-content: center;
 }
 
-/* Dropdown wrapper */
+/* Dropdown wrapper — static so mega-menu positions relative to .navbar */
 .navbar__dropdown {
-  position: relative;
+  position: static;
 }
 
 .navbar__link {
@@ -221,15 +221,17 @@ img { max-width: 100%; display: block; }
 .navbar__link:hover { color: var(--slate-800); background: rgba(0,0,0,.04); }
 .navbar__dropdown:hover .navbar__link svg { transform: rotate(180deg); }
 
-/* Mega Menu — fixed, JS positions it to match navbar edges */
+/* Mega Menu — absolute, positioned relative to .navbar (since .navbar__dropdown is static) */
 .mega-menu {
-  position: fixed;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   opacity: 0;
   visibility: hidden;
   transition: opacity .25s ease, visibility .25s ease;
   z-index: 99;
   pointer-events: none;
-  /* Solid-ish background (nested backdrop-filter doesn't work reliably) */
   background: rgba(255, 255, 255, .96);
   border-radius: 0 0 24px 24px;
   box-shadow: 0 12px 40px rgba(0,0,0,.12);
@@ -239,16 +241,6 @@ img { max-width: 100%; display: block; }
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-}
-
-/* Hover bridge — prevents menu closing when moving mouse from link to menu */
-.navbar__dropdown .mega-menu::before {
-  content: '';
-  position: absolute;
-  top: -12px;
-  left: 0;
-  right: 0;
-  height: 12px;
 }
 
 .mega-menu__inner {
